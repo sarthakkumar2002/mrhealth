@@ -1,0 +1,169 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mr. Heath</title>
+<style>
+.menu {
+    overflow: hidden;
+    background-color:mediumturquoise;
+}
+
+/* Navbar links */
+.menu a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Links - change color on hover */
+ nav:hover {
+    background-color:#CCC;
+    color: purple;
+}
+header {
+    background-color:#fafafa;
+    text-align: center;
+    padding: 20px;
+	
+}
+.column {
+    float: left;
+    width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+.button{
+	color:#FFF;
+	
+}
+.button:hover{
+	color:#FC0;
+}
+#img{
+	border-radius:5pt;
+	float:right;
+}
+#img:hover{
+	opacity:0.5;
+	filter: alpha(opacity=50);
+}
+footer{
+	background-color:#fafafa;
+	color:mediumturquoise;
+	word-wrap:normal;
+	pitch:high;
+}
+.happy{
+  background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+}
+#p{
+	background-color:#0CF;
+	color:#F90;
+	
+}
+#p:hover{
+	opacity:0.5;
+}
+.image{
+	width:100%;
+	height:auto;
+}
+.image:hover{
+	opacity:0.9;
+}
+.container{
+	position:relative;
+	width:50%;
+}
+.imag{
+	opacity:0.5;
+	display:block;
+	width:100%;
+	height:auto;
+	transition: .5s ease;
+	backface-visibility:hidden;
+}
+.middle{
+	transition: .5s ease;
+	opacity:0;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+}
+.container:hover .imag{opacity:0.3;
+}
+.container:hover .middle{
+	opacity:1;
+}
+.text{
+	background-color:mediumturquoise;
+	color:white;
+	font-size:16px;
+	padding:16px 32px;
+}
+.tour{
+	background-color:mediumturquoise;
+	color:#FC0;
+}
+.sp{
+	background-color:#FC0;
+	color:#FFF;
+                   font-size:18px;
+}
+p{
+	float:inherit;
+	font-size:18px;
+}
+
+
+
+
+	
+
+
+</style>
+</head>
+
+<body>
+<header><FONT  color="mediumturquoise"face="Arial Black, Gadget, sans-serif" size ='72'><strong>Mr. Health</strong></font><br><FONT  color="mediumturquoise"face="Arial Black, Gadget, sans-serif" size='23'>BMI - Calculator</FONT>
+</header>
+<nav><div class="menu"><a href="#home" target="_blank"><div class="button">Home</div></a><a href="#about"><div class="button">About</div></a><a href="#contact" target="_parent"><div class="button">Calculator</div></a></div></nav>
+<a name="home"><img src="{% static '1.jpg'  %}" class="image" /></a>
+<a name="about"><center><h2 style="color:mediumturquoise;font-size:36px;">About us</h2></center><br /></a>
+<article><p><center> <font  size ="5">Mr Health is a modern Bmi Calculator that facilitates excellent values with some helth tips too. It is made by the idea that every individual has a right to have a healty life and all the results calculated here are openly availible as the surveys which allow to have a better understanging of heath aroung the surroundings.<br><br>Attention! - All your data here is shared as the open source surveys. </p></font></center></article>
+<center><div class="container">
+<img  src="{% static '2.jpg'  %}" alt="healthy family" class="imag" style="width:100%;" />
+<div class="middle">
+<div class="text">Our Pride</div>
+</div>
+</div></center> 
+<a name="contact"><div class="tour"><center><h3 style="font-size:36px;color:#FFF">BMI Calaculator</h3><sub style="color:#fafafa;"><i>Please fill your details here as Height in cm and weight in kg</i></sub></center><br /><form method="post" action="/bmi/">{% csrf_token %}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name &nbsp;
+<input type="text" name="name" align="left"/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gender &nbsp; <INPUT type="textl" name="gender"  align="right" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Height&nbsp;<input type="number" name="height" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Weight &nbsp;<input type="number" name="weight" align="middle" width="100%" /><br /><br />
+<center><button class="sp">Send Now</button><br /><br /></form>
+</center>
+</div></a><br /><center><h4 style="font-size:36px;color:#FC0;">Lets make health our passion!</h4></center><br /><img  src={% static '3.jpg'  %} class="image" /><br /><br /><footer>Mr. Health - The BMI calculator<br />
+Phone: 8448870232<br />
+Email: kumarsarthak1402@gmail.com<div style="float:right;"><u>Created by Sarthak Kumar</u></div>&nbsp;<br />
+</footer></body></html>

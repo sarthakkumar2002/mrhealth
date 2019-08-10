@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mr. Heath</title>
+<style>
+.menu {
+    overflow: hidden;
+    background-color:mediumturquoise;
+}
+
+/* Navbar links */
+.menu a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Links - change color on hover */
+ nav:hover {
+    background-color:#CCC;
+    color: purple;
+}
+header {
+    background-color:#fafafa;
+    text-align: center;
+    padding: 20px;
+	
+}
+.column {
+    float: left;
+    width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+.button{
+	color:#FFF;
+	
+}
+.button:hover{
+	color:#FC0;
+}
+#img{
+	border-radius:5pt;
+	float:right;
+}
+#img:hover{
+	opacity:0.5;
+	filter: alpha(opacity=50);
+}
+footer{
+	background-color:#fafafa;
+	color:mediumturquoise;
+	word-wrap:normal;
+	pitch:high;
+}
+.happy{
+  background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+}
+#p{
+	background-color:#0CF;
+	color:#F90;
+	
+}
+#p:hover{
+	opacity:0.5;
+}
+.image{
+	width:100%;
+	height:auto;
+}
+.image:hover{
+	opacity:0.9;
+}
+.container{
+	position:relative;
+	width:50%;
+}
+.imag{
+	opacity:0.5;
+	display:block;
+	width:100%;
+	height:auto;
+	transition: .5s ease;
+	backface-visibility:hidden;
+}
+.middle{
+	transition: .5s ease;
+	opacity:0;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+}
+.container:hover .imag{opacity:0.3;
+}
+.container:hover .middle{
+	opacity:1;
+}
+.text{
+	background-color:mediumturquoise;
+	color:white;
+	font-size:16px;
+	padding:16px 32px;
+}
+.tour{
+	background-color:mediumturquoise;
+	color:#FC0;
+}
+.sp{
+	background-color:white;
+	color: #FCo;
+                   font-size:18px;
+                   border: 2px solid mediumturquoise;
+}
+p{
+	float:inherit;
+	font-size:18px;
+}
+
+
+
+
+	
+
+
+</style>
+</head>
+
+<body>
+<header><FONT  color="mediumturquoise"face="Arial Black, Gadget, sans-serif" size ='72'><strong>Mr. Health</strong></font><br><FONT  color="mediumturquoise"face="Arial Black, Gadget, sans-serif" size='23'>BMI - Calculator</FONT>
+</header>
+<nav><div class="menu"><a href="http://localhost:8000/" ><div class="button">Home</div></a><a href="#download" target="_parent"><div class="button">Downloads</div></a></div></nav>
+<img src="{% static '4.jpg'  %}" class="image" />
+<center><h2 style="color:mediumturquoise;font-size:36px;">Your BMI</h2></center><br />
+<article><p><center> <font  size ="5">Hello {{n}} your bmi is {{b}}, It seems that you are {{s}}.We have amazing tips for you which you can download from below.<br><br>Attention! - All your data here is shared as the open source surveys. </p></font></center></article>
+<a name="download"><center><h2 style="color:mediumturquoise;font-size:36px;">Downloads</h2><br><img src="{% static '5.png' %}"/></center><br /><center><a href="{% static '1.csv'  %}" download><button class="sp">Survey</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{%  static "diettips.zip" %}" download><button class="sp">Diet Tips</button></a></center></a><br /><br /><footer>Mr. Health - The BMI calculator<br />
+Phone: 8448870232<br />
+Email: kumarsarthak1402@gmail.com<div style="float:right;"><u>Created by Sarthak Kumar</u></div>&nbsp;<br />
+</footer></body></html>
